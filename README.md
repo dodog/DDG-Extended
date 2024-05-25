@@ -1,23 +1,12 @@
-## DuckduckMenu
+## DuckduckGO Extented
 
-#### If you are having issues with v3, the old version is available in releases.
-
-Originally a fork of DuckduckGo Extended aimed at fixing bugs and improving quality.
-Fully revised code, updated to latest standards.
+Forked DuckDuck Advanced Menu with custom edits.
 Extends DDG by adding a customizable list of additional search engines for making fast searches from other engines.
 
-Tested on:
-- Waterfox 36
-- Firefox 36
-- Chrome 41
 
 ### Features:
-- Default Engines: Google, Youtube, Wikipedia, Github, 4Anime, ThePirateBay,GoGoAnime,AniList.
+- Default Engines: Google, Youtube, Wikipedia, Mapy.cz, GoogleMaps.
 - Add and Remove Custom Engines.
 - Native look
-
-
-![ddm](https://raw.githubusercontent.com/Sb2001nov/Advance_DDG/main/resources/Sample.png "DDM")
-Suitable for any DDG theme.
 
 MIT LICENSE
