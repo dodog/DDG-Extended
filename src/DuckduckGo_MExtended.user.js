@@ -1,17 +1,19 @@
 // ==UserScript==
-// @name            DuckDuckAdvanceMenu
-// @description     Extends DuckDuckGo by adding a customizable list of additional search engines for making fast searches from other engines and make anime search faster.
-// @homepage        https://github.com/Sb2001nov/Advance_DDG/
-// @icon            https://raw.githubusercontent.com/Sb2001nov/Advance_DDG/main/resources/large.png
+// @name            DuckDuckGO - Extended 5
+// @description     Extends DuckDuckGo by adding a customizable list of additional search engines for making fast searches from other engines.
+// @homepage        https://github.com/dodog/DDG-Extended
+// @icon            https://github.com/dodog/DDG-Extended/blob/main/resources/large.png
 // @include         *://duckduckgo.com/?q=*
-// @require         //ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js
+// @match           *://duckduckgo.com/*
+// @require         *://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js
 // @grant           GM_getValue
 // @grant           GM_setValue
 // @grant           GM_xmlhttpRequest
 // @license         MIT
-// @version         1.0.0
+// @version         1.0.1
 // @author          Shubham Singh
 // ==/UserScript==
+//[Based on DuckduckMenu script from Shubham Singh](https://github.com/ishubhamsingh2e/Advance_DDG)
 //Styles
 
 function addGlobalStyle(css) {
@@ -27,72 +29,70 @@ function addGlobalStyle(css) {
   head.appendChild(style);
 }
 //Main Menu Style
-addGlobalStyle('.ddgm { background-color: #24272A; height: auto; display: inline-block;width: 100%; }');
+//addGlobalStyle('.ddg_extented { background-color: #FAFAFA; height: auto; float:left; position:relative; top:40px; left:10%;z-index:999 }');
+addGlobalStyle('.ddgm { background-color: #FAFAFA; height: 30px; float:left; position:relative; top:0px; left:158px; z-index:999 }');
 //Button Style
-addGlobalStyle('.ddgmbtn { background-color: #24272A; height: 25px; width: auto; text-align: center; display: inline-block; vertical-align: middle;padding-top: 6px;padding-bottom: 6px; font-family: inherit; font-size: 1.2em; font-weight: 600; color: white; border-width: 3px; border-bottom-width: 0px; border-color:  #24272A; padding-left: 4px; padding-right: 4px; border-style: solid;}');
-addGlobalStyle('.ddgmbtn:hover { background-color:  #5A6269; color: white; text-decoration:none;}');
-addGlobalStyle('.ddgmbtn:visited {color: white;}');
+
+
+//addGlobalStyle('.body #header_wrapper #header #header_content_wrapper #header_content #header_button_wrapper #header_button #header_button_menu_wrapper #header_button_menu li.disabled {display: none!important;}');
+
+addGlobalStyle('.ddgmbtn { float:left; width:100%; position:relative; top:0px; z-index:999; background-color: #FAFAFA;  width: auto; text-align: center; padding: 2px 6px 6px 6px; font-size:1.0em; font-weight:300; color: black;}');
+addGlobalStyle('.ddgmbtn:hover { background-color: #FAFAFA; color: black; text-decoration:none;}');
+addGlobalStyle('.ddgmbtn:visited {color: black;}');
 //Custom Engine Style
-addGlobalStyle('.cddgmbtn { background-color: #24272A;}');
+addGlobalStyle('.cddgmbtn { background-color: #FAFAFA;}');
 //Engine Add Style
 addGlobalStyle('.addengine { float: right;}');
-addGlobalStyle('.addengine:hover { background-color:  #5A6269; color: white; text-decoration:none;}');
-addGlobalStyle('.addengine:visited {color: white;}');
+addGlobalStyle('.addengine:hover { background-color: #FAFAFA; color: black; text-decoration:none;}');
+addGlobalStyle('.addengine:visited {background-color: #FAFAFA; color: black;}');
 //Edit Menu Style
 addGlobalStyle('.enginedit { float: right;}');
-addGlobalStyle('.enginedit:hover { background-color:  #5A6269; color: white; text-decoration:none;}');
-addGlobalStyle('.enginedit:visited {color: white;}');
-addGlobalStyle('.removex { color: red;font-family: inherit; font-weight: bold; position:relative; top:-5px;}');
-addGlobalStyle('.removex:visited {color: red;}')
-addGlobalStyle('.removex:hover { color: white; text-decoration:none;}');
-addGlobalStyle('.ddgembtn { float: right; background-color: #24272A; height: 25px; width: auto; text-align: center; display: inline-block; vertical-align: middle; padding-top: 6px; padding-bottom: 6px; font-family: inherit; font-size: 1.2em; font-weight: 600; color: white; border-width: 3px; border-bottom-width: 0px; border-color: #24272A; padding-left: 4px; padding-right: 4px; border-style: solid; text-decoration: none;}');
-addGlobalStyle('.ddgembtn:hover { background-color:  #5A6269; color: white; text-decoration:none;}');
+addGlobalStyle('.enginedit:hover { background-color: #FAFAFA; color: black; text-decoration:none;}');
+addGlobalStyle('.enginedit:visited {background-color: #FAFAFA; color: black;}');
+addGlobalStyle('.removex { background-color: #FAFAFA; color: black; font-weight: bold; position:relative;}');
+addGlobalStyle('.removex:visited {background-color: #FAFAFA; color: black;}')
+addGlobalStyle('.removex:hover { background-color: #FAFAFA; color: black; text-decoration:none;}');
+addGlobalStyle('.ddgembtn { float: right; background-color: #FAFAFA;  width: auto;  position:relative; top:0px; z-index:999; padding: 2px 6px 6px 6px; font-size:1.0em; font-weight:300; color: black; text-decoration: none;}');
+addGlobalStyle('.ddgembtn:hover { background-color: #FAFAFA; color: black; text-decoration:none;}');
 
 
 //-DDG-//
 function ddm() {
   //Create Menu
   var searchVal = $('#search_form_input').val();
-  $('<div>').addClass('ddgm').prependTo('body');
+  $('<div>').addClass('ddgm').attr('id', 'ddg_extented').appendTo('.header');
   //Load default Engines
   function LoadDefault() {
     var gname = GM_getValue('ddgmDisEngines', 'empty');
     var dname;
     var durl;
-    for (var i = 0; i < 8; i++) {
+    for (var i = 0; i < 6; i++) {
       switch (i) {
         case 0:
-          dname = 'Google';
-          durl = 'http://www.google.com/search?q=';
+          dname = 'MapyCZ';
+          durl = 'https://sk.mapy.cz/turisticka?q=';
           break;
         case 1:
-          dname = 'Youtube';
-          durl = 'http://www.youtube.com/results?search_query=';
+          dname = 'GoogleMaps';
+          durl = 'http://maps.google.com/maps?q=';
           break;
         case 2:
           dname = 'Wikipedia';
-          durl = 'http://en.wikipedia.org/w/index.php?title=Special%3ASearch&profile=default&search=';
+          durl = 'https://en.wikipedia.org/w/index.php?title=Special%3ASearch&profile=default&search=';
           break;
         case 3:
-          dname = 'Github';
-          durl = 'https://github.com/search?q=';
+          dname = 'Google';
+          durl = 'https://www.google.com/search?q=';
           break;
         case 4:
-          dname = 'GoGoAnime';
-          durl = 'https://gogoanime.so//search.html?keyword=';
+          dname = 'IMDB';
+          durl = 'https://www.imdb.com/find/?q=';
           break;
         case 5:
-          dname = 'ThePirateBay';
-          durl = 'https://pirateproxy.live/search/';
+          dname = 'Youtube';
+          durl = 'https://www.youtube.com/results?search_query=';
           break;
-        case 6:
-          dname = '4Anime';
-          durl = 'https://4anime.to/?s=';
-          break;
-        case 7:
-          dname = 'AniList';
-          durl = 'https://anilist.co/search/anime?search=';
-          break;
+
         default:
           alert('Error');
       }
@@ -116,13 +116,15 @@ function LoadCustom() {
     }
   }
 }
-  
+
 LoadDefault();
 LoadCustom();
-  
-//Create Settings Menu  
+
+//Create Settings Menu
 $('<a>').addClass('ddgembtn').attr('id', 'addmengine').text('Add').attr('href', '#').appendTo('.ddgm');
 $('<a>').addClass('enginedit').addClass('ddgmbtn').text('Remove').attr('href', '#').appendTo('.ddgm');
+
+
 
 /*
 
@@ -131,7 +133,7 @@ Logic
 
 
 */
-  
+
 //Default Engine Creator
 function btncreate(name, searchEngine, _searchVal) {
   if (name != undefined & searchEngine != undefined) {
@@ -155,7 +157,7 @@ $('.enginedit').click(function () {
     $('.ddgem').slideUp(300, function () {
       $(this).remove();
     });
-  } 
+  }
   else {
     //if removex doesn't exist add menu
     $('<a>').text('x').addClass('removex').hide().attr('href', '#').appendTo('.engine').fadeIn(300);
@@ -170,7 +172,7 @@ $(document).on('click', '#addmengine', function () {
   if (name.length < 25) {
     var cSearchEngine = prompt('Engine URL (Example:http://www.google.com/search?q={searchTerms})', 'URL');
     cbtncreate(cName, cSearchEngine, searchVal);
-    //Save Custom engine           
+    //Save Custom engine
     var cEnginesave = [undefined];
     for (var i = 0; i < 15; i++) {
       cEnginesave[i] = GM_getValue('CEngineName' + i, 'empty');
@@ -180,7 +182,7 @@ $(document).on('click', '#addmengine', function () {
         break;
       }
     }
-  } 
+  }
   else
   {
     alert('Your title is too long');
@@ -266,7 +268,7 @@ addNewEngine: function () {
 }
 };
 
-  
+
 //Function Calling
 if (window.location.href.indexOf('http://mycroftproject.com/') !== - 1) {
 mycroft.addLinks(document.getElementById('plugins'));
