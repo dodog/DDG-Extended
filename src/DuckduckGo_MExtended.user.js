@@ -2,7 +2,7 @@
 // @name            DuckDuckGO - Extended 5
 // @description     Extends DuckDuckGo by adding a customizable list of additional search engines for making fast searches from other engines.
 // @homepage        https://github.com/dodog/DDG-Extended
-// @icon            https://raw.githubusercontent.com/dodog/DDG-Extended/main/resources/large.png
+// @icon            
 // @include         *://duckduckgo.com/?q=*
 // @match           *://duckduckgo.com/*
 // @require         *://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js
@@ -30,13 +30,8 @@ function addGlobalStyle(css) {
   head.appendChild(style);
 }
 //Main Menu Style
-//addGlobalStyle('.ddg_extented { background-color: #FAFAFA; height: auto; float:left; position:relative; top:40px; left:10%;z-index:999 }');
 addGlobalStyle('.ddgm { background-color: #FAFAFA; height: 30px; float:left; position:relative; top:0px; left:158px; z-index:999 }');
 //Button Style
-
-
-//addGlobalStyle('.body #header_wrapper #header #header_content_wrapper #header_content #header_button_wrapper #header_button #header_button_menu_wrapper #header_button_menu li.disabled {display: none!important;}');
-
 addGlobalStyle('.ddgmbtn { float:left; width:100%; position:relative; top:0px; z-index:999; background-color: #FAFAFA;  width: auto; text-align: center; padding: 2px 6px 6px 6px; font-size:1.0em; font-weight:300; color: black;}');
 addGlobalStyle('.ddgmbtn:hover { background-color: #FAFAFA; color: black; text-decoration:none;}');
 addGlobalStyle('.ddgmbtn:visited {color: black;}');
