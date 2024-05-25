@@ -11,7 +11,8 @@
 // @grant           GM_xmlhttpRequest
 // @license         MIT
 // @version         1.0.3
-// @updateURL       https://github.com/dodog/DDG-Extended/raw/main/src/DuckduckGo_MExtended.user.js
+// @updateURL       https://github.com/dodog/DDG-Extended/raw/main/src/DuckduckGo-Extended.user.js
+// @downloadURL     https://github.com/dodog/DDG-Extended/raw/main/src/DuckduckGo-Extended.user.js
 // @author          Shubham Singh
 // ==/UserScript==
 //[Based on DuckduckMenu script from Shubham Singh](https://github.com/ishubhamsingh2e/Advance_DDG)
