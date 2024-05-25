@@ -5,12 +5,12 @@
 // @icon            https://raw.githubusercontent.com/dodog/DDG-Extended/main/resources/large.png
 // @include         *://duckduckgo.com/?q=*
 // @match           *://duckduckgo.com/*
-// @require         https:://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js
+// @require         https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js
 // @grant           GM_getValue
 // @grant           GM_setValue
 // @grant           GM_xmlhttpRequest
 // @license         MIT
-// @version         1.0.5
+// @version         1.0.6
 // @updateURL       https://github.com/dodog/DDG-Extended/raw/main/src/DuckDuckGo-Extended.user.js
 // @downloadURL     https://github.com/dodog/DDG-Extended/raw/main/src/DuckDuckGo-Extended.user.js
 // @author          Shubham Singh
