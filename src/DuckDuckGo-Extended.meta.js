@@ -10,7 +10,7 @@
 // @grant           GM_setValue
 // @grant           GM_xmlhttpRequest
 // @license         MIT
-// @version         1.0.4
+// @version         1.0.6
 // @updateURL       https://github.com/dodog/DDG-Extended/raw/main/src/DuckDuckGo-Extended.user.js
 // @downloadURL     https://github.com/dodog/DDG-Extended/raw/main/src/DuckDuckGo-Extended.user.js
 // @author          Shubham Singh
