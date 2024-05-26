@@ -52,7 +52,6 @@ addGlobalStyle('.removex:hover { background-color: #FAFAFA; color: black; text-d
 addGlobalStyle('.ddgembtn { float: right; background-color: #FAFAFA;  width: auto;  position:relative; top:0px; z-index:999; padding: 2px 6px 6px 6px; font-size:1.0em; font-weight:300; color: black; text-decoration: none;}');
 addGlobalStyle('.ddgembtn:hover { background-color: #FAFAFA; color: black; text-decoration:none;}');
 
-
 //-DDG-//
 function ddm() {
   //Create Menu
@@ -124,13 +123,8 @@ $('<a>').addClass('enginedit').addClass('ddgmbtn').text('Remove').attr('href', '
 
 
 /*
-
-
 Logic
-
-
 */
-
 //Default Engine Creator
 function btncreate(name, searchEngine, _searchVal) {
   if (name != undefined & searchEngine != undefined) {
