@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name            DuckDuckGO - Extended 5
-// @description     Extends DuckDuckGo by adding a customizable list of additional search engines for making fast searches from other engines.
+// @name            DuckDuckGO - Extended
+// @description     DuckDuckGo with customizable search engines, inline SVG icons, and dark mode support.
 // @homepage        https://github.com/dodog/DDG-Extended
 // @icon            https://raw.githubusercontent.com/dodog/DDG-Extended/main/resources/large.png
 // @include         *://duckduckgo.com/?q=*
@@ -10,9 +10,9 @@
 // @grant           GM_setValue
 // @grant           GM_xmlhttpRequest
 // @license         MIT
-// @version         1.0.6
+// @version         2.0.1
 // @updateURL       https://github.com/dodog/DDG-Extended/raw/main/src/DuckDuckGo-Extended.user.js
 // @downloadURL     https://github.com/dodog/DDG-Extended/raw/main/src/DuckDuckGo-Extended.user.js
-// @author          Shubham Singh
+// @author          Jozef Gaal
 // ==/UserScript==
-//[Based on DuckduckMenu script from Shubham Singh](https://github.com/ishubhamsingh2e/Advance_DDG)
+// [Based on DuckduckMenu script from Shubham Singh](https://github.com/ishubhamsingh2e/Advance_DDG)
