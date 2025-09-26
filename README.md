@@ -72,8 +72,7 @@ Manual update:
 
 ## License
 
-MIT License – see LICENSE
- for details.
+MIT License – see [LICENSE](https://github.com/dodog/DDG-Extended?tab=readme-ov-file#) for details.
 
 
 ## Contributions
