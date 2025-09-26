@@ -26,7 +26,7 @@ Extends DuckDuckGo by adding a customizable list of additional search engines fo
    - [Greasemonkey](https://www.greasespot.net/)  
 
 2. Click **Install** on the userscript raw URL:  
-
+https://github.com/dodog/DDG-Extended/raw/refs/heads/main/src/DuckDuckGo-Extended.user.js
 > Ensure you are using the raw `.user.js` file URL, not the GitHub HTML page.
 
 3. After installation, reload DuckDuckGo and you will see the extended search menu under the search bar.
